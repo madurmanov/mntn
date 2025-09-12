@@ -1,0 +1,423 @@
+:root {
+  --color-white: #ffffff;
+  --color-yellow: #fbd784;
+  --color-yellow-dark: #eec565;
+  --color-white-opacity-1: rgba(255, 255, 255, 0.1);
+  --color-white-opacity-5: rgba(255, 255, 255, 0.5);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: inline-block;
+}
+
+.Icon {
+  --size: 2.4rem;
+
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  color: inherit;
+  transition: color 0.2s;
+  will-change: color;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+.Wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 4rem;
+  width: 100%;
+  max-width: 144rem;
+}
+
+.Logo {
+  display: block;
+}
+.Logo-Image {
+  width: 10.8rem;
+}
+
+.Title {
+  position: relative;
+}
+.Title_Number {
+  position: absolute;
+  top: -12.2rem;
+  left: -15rem;
+  display: block;
+  font-size: 24rem;
+  font-weight: 700;
+  color: var(--color-white-opacity-1);
+}
+.Title_Number::before {
+  content: '0';
+}
+.Title-Overline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.6rem;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+}
+.Title-Overline::before {
+  content: '';
+  display: block;
+  margin-right: 3.2rem;
+  width: 7.2rem;
+  height: 0.2rem;
+  background-color: var(--color-yellow);
+}
+.Title-Text {
+  margin: 0;
+  font-family: 'ChronicleDisplay';
+  font-size: 8.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.Title-Text_small {
+  font-size: 6.4rem;
+  text-transform: lowercase;
+}
+.Title-Text_small::first-letter {
+  text-transform: uppercase;
+}
+
+.Header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  height: 15.2rem;
+}
+.Header-Wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  max-width: 180rem;
+  padding: 0 8rem;
+}
+.Header-Logo {
+  justify-self: left;
+}
+.Header-Menu {
+  display: flex;
+  gap: 4rem;
+  justify-self: center;
+}
+.Header-MenuItem {
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: color 0.2s;
+  will-change: color;
+}
+@media (any-hover: hover) {
+  .Header-MenuItem:hover {
+    color: var(--color-yellow);
+  }
+}
+.Header-MenuItem:active {
+  color: var(--color-yellow-dark);
+}
+.Header-Account {
+  display: flex;
+  align-items: center;
+  justify-self: right;
+  font-size: 1.7rem;
+  font-weight: 700;
+  transition: color 0.2s;
+  will-change: color;
+}
+@media (any-hover: hover) {
+  .Header-Account:hover {
+    color: var(--color-yellow);
+  }
+}
+.Header-Account:active {
+  color: var(--color-yellow-dark);
+}
+.Header-AccountIcon {
+  --size: 2.4rem;
+
+  margin-right: 0.8rem;
+  width: var(--size);
+  height: var(--size);
+}
+@media (max-width: 1440px) {
+  .Header-Wrapper {
+    padding: 0 4rem;
+    max-width: 144rem;
+  }
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12rem;
+}
+.Footer-Content {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+}
+.Footer-Text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  margin: 2.4rem 0 0;
+}
+.Footer-Copyright {
+  margin-top: auto;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  color: var(--color-white-opacity-5);
+}
+.Footer-Menu {
+  display: flex;
+  gap: 21rem;
+}
+.Footer-MenuColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.Footer-MenuTitle {
+  margin-bottom: 0.8rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  color: var(--color-yellow);
+}
+.Footer-MenuItem {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  transition: color 0.2s;
+  will-change: color;
+}
+@media (any-hover: hover) {
+  .Footer-MenuItem:hover {
+    color: var(--color-yellow);
+  }
+}
+.Footer-MenuItem:active {
+  color: var(--color-yellow-dark);
+}
+
+.Hero {
+  overflow: hidden;
+}
+.Hero-Wrapper {
+  position: relative;
+  height: 168rem;
+  padding-top: 15.2rem;
+}
+.Hero-Content {
+  position: relative;
+  z-index: 3;
+  max-width: 95rem;
+  margin: 8rem auto 0;
+}
+.Hero-ContentScroll {
+  display: flex;
+  align-items: center;
+  margin-top: 3.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+.Hero-ContentScrollIcon {
+  --size: 2.4rem;
+
+  margin: 0.4rem 0 0 1.2rem;
+  width: var(--size);
+  height: var(--size);
+  animation: arrow-bounce 1.2s infinite;
+}
+@keyframes arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.4rem);
+  }
+}
+.Hero-Shadow {
+  content: '';
+  bottom: -1rem;
+  z-index: 5;
+  display: block;
+  width: 194rem;
+  height: 100rem;
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 60%);
+}
+.Hero-Parallax {
+  width: 192rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.Hero-Parallax_layer_1 {
+  z-index: 1;
+  top: 0;
+  height: 111.3rem;
+  background-image: url('../images/desktop/clouds.png');
+  background-image: image-set(
+    url('../images/desktop/clouds.webp') type('image/webp'),
+    url('../images/desktop/clouds.png') type('image/png')
+  );
+}
+.Hero-Parallax_layer_2 {
+  z-index: 2;
+  top: 42rem;
+  height: 142.2rem;
+  background-image: url('../images/desktop/mountains.png');
+  background-image: image-set(
+    url('../images/desktop/mountains.webp') type('image/webp'),
+    url('../images/desktop/mountains.png') type('image/png')
+  );
+}
+.Hero-Parallax_layer_3 {
+  z-index: 4;
+  top: 64rem;
+  height: 92.6rem;
+  background-image: url('../images/desktop/hill.png');
+  background-image: image-set(
+    url('../images/desktop/hill.webp') type('image/webp'),
+    url('../images/desktop/hill.png') type('image/png')
+  );
+}
+.Hero-Shadow,
+.Hero-Parallax {
+  position: absolute;
+  left: 50%;
+  margin-left: calc(192rem / 2 * -1);
+}
+@media (min-width: 1921px) {
+  .Hero-Shadow::before,
+  .Hero-Shadow::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    z-index: 5;
+    width: 6rem;
+    height: 170rem;
+  }
+  .Hero-Shadow::before {
+    left: -1rem;
+    background: linear-gradient(270deg, rgba(11, 29, 38, 0) 0%, #0b1d26 40%);
+  }
+  .Hero-Shadow::after {
+    right: -1rem;
+    background: linear-gradient(90deg, rgba(11, 29, 38, 0) 0%, #0b1d26 40%);
+  }
+}
+@media (max-width: 1024px) {
+  .Hero-Parallax_layer_1 {
+    background-image: url('../images/touch/clouds.png');
+    background-image: image-set(
+      url('../images/touch/clouds.webp') type('image/webp'),
+      url('../images/touch/clouds.png') type('image/png')
+    );
+  }
+  .Hero-Parallax_layer_2 {
+    background-image: url('../images/touch/mountains.png');
+    background-image: image-set(
+      url('../images/touch/mountains.webp') type('image/webp'),
+      url('../images/touch/mountains.png') type('image/png')
+    );
+  }
+  .Hero-Parallax_layer_3 {
+    background-image: url('../images/touch/hill.png');
+    background-image: image-set(
+      url('../images/touch/hill.webp') type('image/webp'),
+      url('../images/touch/hill.png') type('image/png')
+    );
+  }
+}
+
+.Steps {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+  margin-top: -40rem;
+  padding-bottom: 20rem;
+}
+.Steps-Item {
+  display: flex;
+  gap: 11rem;
+}
+.Steps-Item_reverse {
+  flex-direction: row-reverse;
+}
+.Steps-ItemContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15rem;
+}
+.Steps-ItemText {
+  margin-top: 2.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+.Steps-ItemLink {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  color: var(--color-yellow);
+  transition: color 0.2s;
+  will-change: color;
+}
+.Steps-ItemLinkIcon {
+  --size: 2.4rem;
+
+  margin: 0.4rem 0 0 1.2rem;
+  width: var(--size);
+  height: var(--size);
+  transition: color 0.2s, transform 0.2s;
+  will-change: color, transform;
+}
+@media (any-hover: hover) {
+  .Steps-ItemLink:hover .Steps-ItemLinkIcon {
+    transform: translateX(0.4rem);
+  }
+}
+.Steps-ItemLink:active {
+  color: var(--color-yellow-dark);
+}
+.Steps-ItemImageContainer {
+  transition: transform 0.2s;
+  will-change: transform;
+}
+.Steps-ItemImage {
+  display: block;
+  width: 56.6rem;
+  height: 72rem;
+  object-fit: cover;
+}
+@media (any-hover: hover) {
+  .Steps-Item:hover .Steps-ItemImageContainer {
+    transform: scale(1.04);
+  }
+}

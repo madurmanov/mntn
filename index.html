@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon-512.png">
+  <link rel="icon" sizes="16x16" href="./favicon-16.png">
+  <link rel="icon" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" sizes="48x48" href="./favicon-48.png">
+  <link rel="icon" sizes="64x64" href="./favicon-64.png">
+  <link rel="icon" sizes="128x128" href="./favicon-128.png">
+  <link rel="icon" sizes="192x192" href="./favicon-192.png">
+  <link rel="icon" sizes="256x256" href="./favicon-256.png">
+  <link rel="icon" href="./favicon-48.ico" type="icon/x-icon">
+  <link rel="icon" href="./favicon-48.svg" type="icon/svg+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="theme-color" content="#0B1D26">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>MNTN</title>
+  <meta name="keywords" content="MNTN">
+  <meta name="description" content="Be prepared for the mountains and beyond!">
+  <link rel="preload" href="./fonts/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Gilroy-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/ChronicleDisplay-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./js/main.js" as="script">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="manifest" href="./manifest.json">
+  <style>
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('./fonts/Gilroy-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('./fonts/Gilroy-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('./fonts/Gilroy-ExtraBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ChronicleDisplay';
+      src: url('./fonts/ChronicleDisplay-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      background-color: #0B1D26;
+      color: #FFF;
+      font: 500 10px/1 "Gilroy", "Helvetica", sans-serif;
+    }
+
+    @media (max-width: 1440px) {
+      html {
+        font-size: 0.694vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="App">
+    <header class="Header">
+      <div class="Header-Wrapper Wrapper">
+        <a class="Header-Logo Logo" href="#" aria-label="Go to mainpage">
+          <img class="Logo-Image" src="./images/logo.svg" alt="MNTN Logo">
+        </a>
+
+        <nav class="Header-Menu">
+          <a class="Header-MenuItem" href="#">Equipment</a>
+          <a class="Header-MenuItem" href="#">About Us</a>
+          <a class="Header-MenuItem" href="#">Blog</a>
+        </nav>
+
+        <a class="Header-Account" href="#">
+          <svg class="Header-AccountIcon Icon">
+            <use xlink:href="./images/icons.svg#icon-account"></use>
+          </svg>
+          Account
+        </a>
+      </div>
+    </header>
+
+    <section class="Hero">
+      <div class="Hero-Wrapper Wrapper" data-parallax>
+        <div class="Hero-Content" data-parallax-layer data-parallax-speed="3">
+          <div class="Title">
+            <span class="Title-Overline">A hiking guide</span>
+            <h1 class="Title-Text">Be Prepared For The Mountains And Beyond!</h1>
+          </div>
+          <span class="Hero-ContentScroll">
+            scroll down
+            <svg class="Hero-ContentScrollIcon Icon">
+              <use xlink:href="./images/icons.svg#icon-arrow-down"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="Hero-Parallax Hero-Parallax_layer_1"></div>
+        <div class="Hero-Parallax Hero-Parallax_layer_2" data-parallax-layer data-parallax-speed="4"></div>
+        <div class="Hero-Parallax Hero-Parallax_layer_3"></div>
+        <div class="Hero-Shadow"></div>
+      </div>
+    </section>
+
+    <section class="Steps Wrapper">
+      <article class="Steps-Item">
+        <div class="Steps-ItemContent">
+          <div class="Title">
+            <span class="Title_Number" data-animate="fadeIn" data-animate-duration="600">1</span>
+            <span class="Title-Overline" data-animate="fadeLeft">Get started</span>
+            <h3 class="Title-Text Title-Text_small" data-animate="fadeLeft">What level of hiker are you?</h3>
+          </div>
+          <p class="Steps-ItemText" data-animate="fadeLeft">Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or expert backpacker?</p>
+          <a class="Steps-ItemLink" href="#" aria-label="Read more about get started" data-animate="fadeLeft">
+            read more
+            <svg class="Steps-ItemLinkIcon Icon">
+              <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="Steps-ItemImageContainer">
+          <picture>
+            <source srcset="./images/image-1.webp" type="image/webp">
+            <img class="Steps-ItemImage" src="./images/image-1.jpg" alt="What level of hiker are you?" data-animate="fadeIn">
+          </picture>
+        </div>
+      </article>
+
+      <article class="Steps-Item Steps-Item_reverse">
+        <div class="Steps-ItemContent">
+          <div class="Title">
+            <span class="Title_Number" data-animate="fadeIn" data-animate-duration="600">2</span>
+            <span class="Title-Overline" data-animate="fadeRight">Hiking essentials</span>
+            <h3 class="Title-Text Title-Text_small" data-animate="fadeRight">Picking the right hiking gear!</h3>
+          </div>
+          <p class="Steps-ItemText" data-animate="fadeRight">The nice thing about beginning hiking is that you don’t really need any special gear, you can probably get away with things you already have. Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe wif they get sweaty or wet.</p>
+          <a class="Steps-ItemLink" href="#" aria-label="Read more about hiking essentials" data-animate="fadeRight">
+            read more
+            <svg class="Steps-ItemLinkIcon Icon">
+              <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="Steps-ItemImageContainer">
+          <picture>
+            <source srcset="./images/image-2.webp" type="image/webp">
+            <img class="Steps-ItemImage" src="./images/image-2.jpg" alt="Picking the right hiking gear!" data-animate="fadeIn">
+          </picture>
+        </div>
+      </article>
+
+      <article class="Steps-Item">
+        <div class="Steps-ItemContent">
+          <div class="Title">
+            <span class="Title_Number" data-animate="fadeIn" data-animate-duration="600">3</span>
+            <span class="Title-Overline" data-animate="fadeLeft">Where you go is the key</span>
+            <h3 class="Title-Text Title-Text_small" data-animate="fadeLeft">Understand your map & timing</h3>
+          </div>
+          <p class="Steps-ItemText" data-animate="fadeLeft">To start, print out the hiking guide and map. If it’s raining, throw them in a Zip-Lock bag. Read over the guide, study the map, and have a good idea of what to expect. I like to know what my next landmark is as I hike. For example, I’ll read the guide and know that say, in a mile, I make a right turn at the junction.</p>
+          <a class="Steps-ItemLink" href="#" aria-label="Read more about where you go is the key" data-animate="fadeLeft">
+            read more
+            <svg class="Steps-ItemLinkIcon Icon">
+              <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="Steps-ItemImageContainer">
+          <picture>
+            <source srcset="./images/image-3.webp" type="image/webp">
+            <img class="Steps-ItemImage" src="./images/image-3.jpg" alt="Understand your map & timing" data-animate="fadeIn">
+          </picture>
+        </div>
+      </article>
+    </section>
+
+    <footer class="Footer Wrapper" data-animate="fadeIn">
+      <div class="Footer-Content">
+        <a class="Logo" href="#" aria-label="Go to mainpage">
+          <img class="Logo-Image" src="./images/logo.svg" alt="MNTN Logo">
+        </a>
+        <p class="Footer-Text">Get out there & discover your next slope, mountain & destination!</p>
+        <span class="Footer-Copyright">Copyright 2025 MNTN</span>
+      </div>
+      <nav class="Footer-Menu">
+        <div class="Footer-MenuColumn">
+          <span class="Footer-MenuTitle">More on The Blog</span>
+          <a class="Footer-MenuItem" href="#">About MNTN</a>
+          <a class="Footer-MenuItem" href="#">Contributors & Writers</a>
+          <a class="Footer-MenuItem" href="#">Write For Us</a>
+          <a class="Footer-MenuItem" href="#">Contact Us</a>
+          <a class="Footer-MenuItem" href="#">Privacy Policy</a>
+        </div>
+        <div class="Footer-MenuColumn">
+          <span class="Footer-MenuTitle">More on MNTN</span>
+          <a class="Footer-MenuItem" href="#">The Team</a>
+          <a class="Footer-MenuItem" href="#">Jobs</a>
+          <a class="Footer-MenuItem" href="#">Press</a>
+        </div>
+      </nav>
+    </footer>
+  </div>
+  <script src="./js/main.js" defer></script>
+</body>
+
+</html>
