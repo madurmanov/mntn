@@ -81,7 +81,7 @@
 </head>
 
 <body>
-  <div class="App">
+  <div class="App" id="screen-1">
     <header class="Header">
       <div class="Header-Wrapper Wrapper">
         <a class="Header-Logo Logo" href="#" aria-label="Go to mainpage">
@@ -105,18 +105,61 @@
 
     <section class="Hero">
       <div class="Hero-Wrapper Wrapper" data-parallax>
-        <div class="Hero-Content" data-parallax-layer data-parallax-speed="3">
-          <div class="Title">
-            <span class="Title-Overline">A hiking guide</span>
-            <h1 class="Title-Text">Be Prepared For The Mountains And Beyond!</h1>
+        <div class="Hero-Container">
+          <div class="Hero-Content" data-parallax-layer data-parallax-speed="3">
+            <div class="Title">
+              <span class="Title-Overline">A hiking guide</span>
+              <h1 class="Title-Text">Be Prepared For The Mountains And Beyond!</h1>
+            </div>
+            <span class="Hero-ContentScroll">
+              scroll down
+              <svg class="Hero-ContentScrollIcon Icon">
+                <use xlink:href="./images/icons.svg#icon-arrow-down"></use>
+              </svg>
+            </span>
           </div>
-          <span class="Hero-ContentScroll">
-            scroll down
-            <svg class="Hero-ContentScrollIcon Icon">
-              <use xlink:href="./images/icons.svg#icon-arrow-down"></use>
-            </svg>
-          </span>
+
+          <div class="ControlPanel ControlPanel_left Socials">
+            <span class="Socials-Text">Follow us</span>
+            <ul class="Socials-List">
+              <li class="Socials-Item">
+                <a class="Socials-Link" href="#" aria-label="Visit our Instagram">
+                  <svg class="Socials-Icon Icon">
+                    <use xlink:href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="Socials-Item">
+                <a class="Socials-Link" href="#" aria-label="Visit our Twitter">
+                  <svg class="Socials-Icon Icon">
+                    <use xlink:href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ControlPanel ControlPanel_right Pagination">
+            <ul class="Pagination-List">
+              <li class="Pagination-Item">
+                <a class="Pagination-Link" href="#screen-1" aria-label="Go to start section" data-pagination>Start</a>
+              </li>
+              <li class="Pagination-Item">
+                <a class="Pagination-Link" href="#screen-2" aria-label="Go to get started section" data-pagination>1</a>
+              </li>
+              <li class="Pagination-Item">
+                <a class="Pagination-Link" href="#screen-3" aria-label="Go to hiking essentials section" data-pagination>2</a>
+              </li>
+              <li class="Pagination-Item">
+                <a class="Pagination-Link" href="#screen-4" aria-label="Go to where you go section" data-pagination>3</a>
+              </li>
+            </ul>
+            <div class="Pagination-Scroll">
+              <div class="Pagination-ScrollThumb" data-pagination-thumb></div>
+            </div>
+          </div>
         </div>
+
         <div class="Hero-Parallax Hero-Parallax_layer_1"></div>
         <div class="Hero-Parallax Hero-Parallax_layer_2" data-parallax-layer data-parallax-speed="4"></div>
         <div class="Hero-Parallax Hero-Parallax_layer_3"></div>
@@ -125,20 +168,22 @@
     </section>
 
     <section class="Steps Wrapper">
-      <article class="Steps-Item">
+      <article class="Steps-Item" id="screen-2">
         <div class="Steps-ItemContent">
           <div class="Title">
-            <span class="Title_Number" data-animate="fadeIn" data-animate-duration="600">1</span>
+            <span class="Title-Number" data-animate="fadeIn" data-animate-duration="600">1</span>
             <span class="Title-Overline" data-animate="fadeLeft">Get started</span>
             <h3 class="Title-Text Title-Text_small" data-animate="fadeLeft">What level of hiker are you?</h3>
           </div>
           <p class="Steps-ItemText" data-animate="fadeLeft">Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or expert backpacker?</p>
-          <a class="Steps-ItemLink" href="#" aria-label="Read more about get started" data-animate="fadeLeft">
-            read more
-            <svg class="Steps-ItemLinkIcon Icon">
-              <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </a>
+          <span data-animate="fadeLeft">
+            <a class="Steps-ItemLink" href="#" aria-label="Read more about get started">
+              read more
+              <svg class="Steps-ItemLinkIcon Icon">
+                <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </a>
+          </span>
         </div>
         <div class="Steps-ItemImageContainer">
           <picture>
@@ -148,20 +193,22 @@
         </div>
       </article>
 
-      <article class="Steps-Item Steps-Item_reverse">
+      <article class="Steps-Item Steps-Item_reverse" id="screen-3">
         <div class="Steps-ItemContent">
           <div class="Title">
-            <span class="Title_Number" data-animate="fadeIn" data-animate-duration="600">2</span>
+            <span class="Title-Number" data-animate="fadeIn" data-animate-duration="600">2</span>
             <span class="Title-Overline" data-animate="fadeRight">Hiking essentials</span>
             <h3 class="Title-Text Title-Text_small" data-animate="fadeRight">Picking the right hiking gear!</h3>
           </div>
           <p class="Steps-ItemText" data-animate="fadeRight">The nice thing about beginning hiking is that you don’t really need any special gear, you can probably get away with things you already have. Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe wif they get sweaty or wet.</p>
-          <a class="Steps-ItemLink" href="#" aria-label="Read more about hiking essentials" data-animate="fadeRight">
-            read more
-            <svg class="Steps-ItemLinkIcon Icon">
-              <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </a>
+          <span data-animate="fadeRight">
+            <a class="Steps-ItemLink" href="#" aria-label="Read more about hiking essentials">
+              read more
+              <svg class="Steps-ItemLinkIcon Icon">
+                <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </a>
+          </span>
         </div>
         <div class="Steps-ItemImageContainer">
           <picture>
@@ -171,20 +218,22 @@
         </div>
       </article>
 
-      <article class="Steps-Item">
+      <article class="Steps-Item" id="screen-4">
         <div class="Steps-ItemContent">
           <div class="Title">
-            <span class="Title_Number" data-animate="fadeIn" data-animate-duration="600">3</span>
-            <span class="Title-Overline" data-animate="fadeLeft">Where you go is the key</span>
+            <span class="Title-Number" data-animate="fadeIn" data-animate-duration="600">3</span>
+            <span class="Title-Overline" data-animate="fadeLeft">Where you go</span>
             <h3 class="Title-Text Title-Text_small" data-animate="fadeLeft">Understand your map & timing</h3>
           </div>
           <p class="Steps-ItemText" data-animate="fadeLeft">To start, print out the hiking guide and map. If it’s raining, throw them in a Zip-Lock bag. Read over the guide, study the map, and have a good idea of what to expect. I like to know what my next landmark is as I hike. For example, I’ll read the guide and know that say, in a mile, I make a right turn at the junction.</p>
-          <a class="Steps-ItemLink" href="#" aria-label="Read more about where you go is the key" data-animate="fadeLeft">
-            read more
-            <svg class="Steps-ItemLinkIcon Icon">
-              <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </a>
+          <span data-animate="fadeLeft">
+            <a class="Steps-ItemLink" href="#" aria-label="Read more about where you go">
+              read more
+              <svg class="Steps-ItemLinkIcon Icon">
+                <use xlink:href="./images/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </a>
+          </span>
         </div>
         <div class="Steps-ItemImageContainer">
           <picture>

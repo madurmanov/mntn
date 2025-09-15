@@ -353,3 +353,177 @@
     new ScrollAnimator().init();
   });
 })();
+
+(function () {
+  const FIXED_CLASSNAME = 'ControlPanel_isFixed';
+  const VERTICAL_OFFSET = 40;
+  const RESIZE_THRESHOLD = 1820;
+
+  function stickyOnScroll(el, side) {
+    if (!el) return;
+    let scrollTicking = false;
+    let resizeTicking = false;
+    let offsetX = 0;
+    let startTop = 0;
+
+    const measureNaturalRect = () => {
+      const clone = el.cloneNode(true);
+      clone.style.cssText = `
+        position: absolute !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      `;
+      el.parentNode.insertBefore(clone, el);
+      const rect = clone.getBoundingClientRect();
+      clone.remove();
+      return rect;
+    };
+
+    const recalc = () => {
+      const rect = measureNaturalRect();
+
+      offsetX =
+        side === 'right'
+          ? document.documentElement.clientWidth - rect.right
+          : rect.left;
+
+      startTop = rect.top + window.scrollY - VERTICAL_OFFSET;
+
+      if (
+        el.classList.contains(FIXED_CLASSNAME) &&
+        window.innerWidth > RESIZE_THRESHOLD
+      ) {
+        el.style[side] = offsetX + 'px';
+      } else {
+        el.style[side] = '';
+      }
+    };
+
+    const update = () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY >= startTop) {
+        if (!el.classList.contains(FIXED_CLASSNAME)) {
+          el.classList.add(FIXED_CLASSNAME);
+        }
+      } else {
+        if (el.classList.contains(FIXED_CLASSNAME)) {
+          el.classList.remove(FIXED_CLASSNAME);
+        }
+      }
+
+      if (
+        el.classList.contains(FIXED_CLASSNAME) &&
+        window.innerWidth > RESIZE_THRESHOLD
+      ) {
+        el.style[side] = offsetX + 'px';
+      } else {
+        el.style[side] = '';
+      }
+
+      scrollTicking = false;
+    };
+
+    const onScroll = () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(update);
+        scrollTicking = true;
+      }
+    };
+
+    const onResize = () => {
+      if (!resizeTicking) {
+        requestAnimationFrame(() => {
+          recalc();
+          update();
+          resizeTicking = false;
+        });
+        resizeTicking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+
+    recalc();
+    update();
+  }
+
+  stickyOnScroll(document.querySelector('.ControlPanel_left'), 'left');
+  stickyOnScroll(document.querySelector('.ControlPanel_right'), 'right');
+})();
+
+(function () {
+  const DURATION = 1000;
+
+  function smoothScrollTo(target) {
+    const targetY = target.getBoundingClientRect().top + window.scrollY;
+    const startY = window.scrollY || document.documentElement.scrollTop;
+    const diff = targetY - startY - 40;
+    let startTime;
+
+    function step(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const time = currentTime - startTime;
+      const progress = Math.min(time / DURATION, 1);
+
+      window.scrollTo(0, startY + diff * progress);
+
+      if (time < DURATION) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      smoothScrollTo(target);
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+})();
+
+(function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('[data-pagination]');
+    const thumb = document.querySelector('[data-pagination-thumb]');
+    const total = buttons.length;
+
+    if (total === 0) return;
+
+    thumb.style.height = `${100 / total}%`;
+
+    const sections = Array.from(buttons).map((btn) => {
+      const id = btn.getAttribute('href').slice(1);
+      return document.getElementById(id);
+    });
+
+    const updateThumbByIndex = (index) => {
+      const translateY = index * 100;
+      thumb.style.transform = `translateY(${translateY}%)`;
+    };
+
+    const onScroll = () => {
+      let currentIndex = 0;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2) {
+          currentIndex = index;
+        }
+      });
+
+      updateThumbByIndex(currentIndex);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    updateThumbByIndex(0);
+  });
+})();
